@@ -1,0 +1,40 @@
+README for the models associated with
+
+ Vitko I, Chen Y,Arias JM, Shen Y, Wu XR, Perez-Reyes E (2005) 
+ Functional Characterization and Neuronal Modeling of the Effects of Childhood 
+ Absence Epilepsy Variants of CACNA1H, a T-Type Calcium Channel 
+ J Neurosci 25:4844-4855
+ 
+ The models for this paper were made by modifying Alain Destexhe's
+ thalamic reticular neuron model: Destexhe A, Contreras D, Steriade M, 
+ Sejnowski TJ and Huguenard JR.  In vivo, in vitro and computational 
+ analysis of dendritic calcium currents in thalamic reticular neurons.
+ Journal of Neuroscience 16: 169-185, 1996.
+
+ Three representative models are present for Vitko et al: wild-type (WT) 
+ recombinant Cav3.2 T-channel, and two of the mutants described in the 
+ Vitko et al, 2005 paper (C456S and R788C).
+ 
+ These file were provided by Perez-Reyes.
+ 
+ The auto-launch demo starts with the C456S channel.  The other channels can be
+ accessed by downloading the archive, compiling the mod files with nrnivmodl 
+(unix) or mknrndll (mac and mswin) and then double clicking on the 
+mosinit.hoc file.  See the below directories readme files for more usage
+information.
+
+Details to reproduce Fig 7:  The model will need to downloaded and compiled as
+per the above paragraph so that the wildtype and R788C mutant directories can 
+each be accessed.  Start with the mosinit.hoc in either directory. Run
+the model in:
+	Burst in 3 compartment Model
+	Current clamp
+	Location dend1[1][1]
+	delay off
+	and then either:
+	fig Aa	EPSP:  0.02 nA current injection for 100 ms
+	fig Ba	IPSP: -0.1  nA current injection for 300 ms
+
+7/12/2004 models updated to run with button presses of control panel (had
+to be restarted earlier). 
+ 

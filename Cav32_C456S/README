@@ -1,0 +1,100 @@
+
+ NEURON TUTORIAL FOR IMPLEMENTING SIMULATIONS OF THALAMIC RETICULAR NEURONS
+
+                          Alain Destexhe
+		Laboratory for Computational Neuroscience
+	Unité de Neurosciences Intégratives et Computationnelles (UNIC)
+	Centre National de la Recherche Scientifique (CNRS)
+			91198 Gif-sur-Yvette, France 
+
+	    Formerly from (when this work was created):
+            Department of Physiology, Laval University,
+                      Quebec G1K 7P4, Canada
+
+                       Destexhe@iaf.cnrs-gif.fr
+                     http://cns.iaf.cnrs-gif.fr/Main.html
+
+
+This package is running with the NEURON simulation program written by Michael
+Hines and available on internet at:
+  http://www.neuron.yale.edu/neuron/
+  http://neuron.duke.edu/
+
+The package contains mechanisms (.mod files) and programs (.oc files) needed to
+simulate different models of thalamic reticular (RE) neurons, relative to the
+paper:
+
+  Destexhe A, Contreras D, Steriade M, Sejnowski TJ and Huguenard JR.  
+  In vivo, in vitro and computational analysis of dendritic calcium currents 
+  in thalamic reticular neurons.  Journal of Neuroscience 16: 169-185, 1996.
+http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&db=pubmed&dopt=Abstract&list_uids=8613783&query_hl=7
+
+
+A postscript version of this paper, including figures, is available on
+internet at 
+  http://cns.iaf.cnrs-gif.fr/Main.html
+  
+  PROGRAMS
+  ========
+
+re1_cc.oc  : current clamp in one-compartment RE cell
+re3_cc.oc  : current clamp in 3-compartment RE cell
+re3_vc.oc  : voltage clamp in 3-compartment RE cell
+re80_cc.oc : current clamp in 80-compartment RE cell
+re80_vc.oc : voltage clamp in 80-compartment RE cell
+reD_cc.oc  : current clamp in 8-compartment RE cell (dissociated cell)
+reD_vc.oc  : voltage clamp in 8-compartment RE cell (dissociated cell)
+
+
+  MECHANISMS
+  ==========
+
+ HH2.mod		: fast sodium spikes (Na and K currents)
+ IT2.mod		: T-type calcium current of RE cells
+ capump.mod		: intracellular calcium dynamics
+ VClamp.mod		: mechanism for single-electrode voltage-clamp
+
+
+  HOW TO RUN
+  ==========
+
+Use autolaunch on modeldb or:
+
+unix platform:
+
+  To compile the demo, NEURON and INTERVIEWS must be installed and working on
+  the machine you are using.  Just type "nrnivmodl" to compile the mechanisms
+  given in the mod files.
+
+  Then, execute the main demo program by typing:
+
+  nrngui mosinit.hoc
+
+mswin platform:
+
+  Compile the mechanism (mod) files by using mknrndll.  Then start the simulation
+  by clicking on mosinit.hoc in windows explorer.
+
+After either of the above platforms instructions: 
+
+Once the menu and graphics interface has appeared, click on "Init and Run" button
+or if appropriate ""Start protocol" for voltage clamp families, to start the simulation...
+
+For more information about how to get NEURON and how to install it, please
+refer to the following sites:
+  http://www.neuron.yale.edu/neuron/
+  http://neuron.duke.edu/
+
+For further information, please contact:
+
+Alain Destexhe
+Laboratory for Computational Neuroscience
+Unité de Neurosciences Intégratives et Computationnelles (UNIC)
+Centre National de la Recherche Scientifique (CNRS)
+91198 Gif-sur-Yvette, France 
+
+Destexhe@iaf.cnrs-gif.fr
+http://cns.iaf.cnrs-gif.fr/Main.html
+
+Updated 7/10/05 for button restart fix.
+

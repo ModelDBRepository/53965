@@ -1,0 +1,64 @@
+/*----------------------------------------------------------------------
+
+  Procedure for localizing T-current in distal dendrites
+
+	- Reconstructed thalamic RE cell with 80 compartments (re80)
+	- currents must be localized everywhere
+
+	first parameter: somatic and proximal dendritic conductance
+	secnd parameter: medial dendritic conductance
+	third parameter: distal dendritic conductance
+
+----------------------------------------------------------------------*/
+
+proc localize() {
+
+	/* CHANGE ALL : */
+
+		forall { gcabar_it2 = $3 }
+
+
+
+	/* CHANGE SOMA : */
+
+		soma.gcabar_it2 = $1
+
+
+	/* CHANGE PROXIMAL SEGMENTS : */
+
+		dend1[0].gcabar_it2 = $1
+		dend1[1].gcabar_it2 = $1
+		dend1[2].gcabar_it2 = $1
+		dend1[22].gcabar_it2 = $1
+
+		dend2[0].gcabar_it2 = $1
+
+		dend3[0].gcabar_it2 = $1
+
+		dend4[0].gcabar_it2 = $1
+
+
+
+	/* CHANGE MEDIAL SEGMENTS : */
+
+		dend1[3].gcabar_it2 = $2
+		dend1[16].gcabar_it2 = $2
+		dend1[17].gcabar_it2 = $2
+		dend1[18].gcabar_it2 = $2
+		dend1[19].gcabar_it2 = $2
+		dend1[23].gcabar_it2 = $2
+		dend1[34].gcabar_it2 = $2
+
+		dend2[1].gcabar_it2 = $2
+		dend2[4].gcabar_it2 = $2
+
+		dend3[1].gcabar_it2 = $2
+		dend3[10].gcabar_it2 = $2
+
+		dend4[1].gcabar_it2 = $2
+		dend4[2].gcabar_it2 = $2
+
+}
+
+
+

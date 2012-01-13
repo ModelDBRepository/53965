@@ -1,0 +1,41 @@
+/*----------------------------------------------------------------------
+
+  Procedure for localizing T-current in distal dendrites
+
+	- Model of dissociated thalamic RE cell with 8 compartments
+	- currents must be localized everywhere
+
+	first parameter: somatic and proximal conductance
+	secnd parameter: medial dendritic conductance
+
+  In the dissociated cell, the soma, dend1[0,1,2,3] and dend3[0,1,7] were
+  kept from the original and renamed soma, dend1[0,1,2,3], and dend2[0,1,2],
+  repectively.
+
+
+----------------------------------------------------------------------*/
+
+proc localize() {
+
+	/* CHANGE ALL : */
+
+		forall { gcabar_it2 = $2 }
+
+
+	/* CHANGE SOMA : */
+
+		soma.gcabar_it2 = $1
+
+
+	/* CHANGE PROXIMAL SEGMENTS : */
+
+		dend1[0].gcabar_it2 = $1
+		dend1[1].gcabar_it2 = $1
+		dend1[2].gcabar_it2 = $1	// same as re80
+
+		dend2[0].gcabar_it2 = $1	// same as dend3[0] in re80
+
+}
+
+
+

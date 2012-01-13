@@ -1,0 +1,23 @@
+/*----------------------------------------------------------------------
+
+  Procedure for localizing T-current in distal dendrites
+
+	- Thalamic RE cell reduced to 3 compartments (re3)
+	- currents must be localized everywhere
+
+	first parameter: proximal conductance (soma)
+	secnd parameter: medial conductance (proximal dendrites)
+	third parameter: distal conductance (distal dendrites)
+
+----------------------------------------------------------------------*/
+
+proc localize() {
+
+	soma.gcabar_it2 = $1			/* SOMA */
+
+	dend1[0].gcabar_it2 = corrD * $2	/* PROXIMAL DENDRITE */
+
+	dend1[1].gcabar_it2 = corrD * $3	/* DISTAL DENDRITE */
+
+}
+

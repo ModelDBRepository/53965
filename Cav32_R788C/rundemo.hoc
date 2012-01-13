@@ -1,0 +1,57 @@
+
+//----------------------------------------------------------------------------
+//  define a panel to run the different demos
+//----------------------------------------------------------------------------
+
+strdef tstr
+ismenu=0
+pwmcnt = PWManager[0].count // the initial gui should not be dismissed
+
+objref El
+
+electrodes_present=0	// after electrodes are created they must be
+			// destroyed if simulation restarted
+
+proc destroy_elec() {
+	execute("objref stim, vc",El)
+}
+
+proc restart() {local i
+
+	if (electrodes_present) {
+		destroy_elec()
+	}
+
+	forall delete_section()
+
+	objref graphItem, save_window_
+	for i=0, n_graph_lists-1 {
+		graphList[i].remove_all()
+	}
+	flush_list.remove_all()
+	fast_flush_list.remove_all()
+	doNotify()
+	for (i= PWManager[0].count-1; i >= pwmcnt; i -= 1) {
+		PWManager[0].close(i)
+		doNotify()
+	}
+	
+	sprint(tstr, "%s.oc", $s1)
+	load_file(1, tstr)
+}
+
+proc make_demopanel() {
+	xpanel("Simulations of TC cells")
+// xradiobutton("7", "restart(\"makefig7\")")
+
+	xbutton("Burst behavior in single-compartment model","restart(\"re1_cc\")")
+	xbutton("Burst behavior in 3-compartment model","restart(\"re3_cc\")")
+        xbutton("Voltage-clamp in 3-compartment cell model","restart(\"re3_vc\")")
+        xbutton("Burst behavior in detailed cell model","restart(\"re80_cc\")")
+        xbutton("Voltage-clamp in detailed cell model","restart(\"re80_vc\")")
+        xbutton("Burst behavior in dissociated cell model","restart(\"reD_cc\")")
+        xbutton("Voltage-clamp in dissociated cell model","restart(\"reD_vc\")")
+	xpanel()
+}
+
+make_demopanel()
