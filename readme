@@ -38,3 +38,6 @@ the model in:
 7/12/2004 models updated to run with button presses of control panel (had
 to be restarted earlier). 
  
+20120113 upgrades from euler to derivimplicit in capump.mod(s), to
+cnexp in IT2.mod(s) as per
+http://www.neuron.yale.edu/phpbb/viewtopic.php?f=28&t=592
