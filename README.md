@@ -86,5 +86,7 @@ Centre National de la Recherche Scientifique (CNRS)
 Destexhe@iaf.cnrs-gif.fr
 [http://cns.iaf.cnrs-gif.fr/Main.html](http://cns.iaf.cnrs-gif.fr/Main.html)
 
-Updated 7/10/05 for button restart fix.
+## Changelog
+7/10/05 Updated for button restart fix.
+
 5/27/25 Standardized to Markdown.
