@@ -87,7 +87,4 @@ Destexhe@iaf.cnrs-gif.fr
 [http://cns.iaf.cnrs-gif.fr/Main.html](http://cns.iaf.cnrs-gif.fr/Main.html)
 
 Updated 7/10/05 for button restart fix.
-
----
-
-2025-05-27 – Standardized to Markdown.
+5/27/25 Standardized to Markdown.
